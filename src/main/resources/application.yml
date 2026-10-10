@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: afmsystem
+  datasource:
+    url: jdbc:mysql://localhost:3306/agriculture_farm_db?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:Jeshamba@7722}
+  jpa:
+    hibernate:
+      ddl-auto: update
+app:
+  jwt:
+    secret: ${JWT_SECRET:ZGV2LW9ubHktc2VjcmV0LWtleS1jaGFuZ2UtbWUtYWdyaWN1bHR1cmUtZmFybS1zeXN0ZW0tMDEyMzQ1Njc4OQ==}
+    expiration-ms: ${JWT_EXPIRATION_MS:1800000}
+    refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
+  admin:
+    email: ${ADMIN_EMAIL:gopi@gmail.com}
+    password: ${ADMIN_PASSWORD:Gopi@7010}
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info

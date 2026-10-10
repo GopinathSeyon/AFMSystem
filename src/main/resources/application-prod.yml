@@ -1,0 +1,14 @@
+# No default secrets: the app refuses to start unless every value below is set.
+spring:
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false
